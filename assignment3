@@ -1,1 +1,73 @@
+package Homework;
+import java.util.Scanner;
+public class ImmutableObject {
 
+	public static void main(String[] args) {
+		float fahrenheit =(float) 98.6; 
+		float centigrade;
+		centigrade = (5f/9f)*(fahrenheit-32);
+		System.out.println(fahrenheit+" & "+centigrade);
+		
+		
+		for (float i =0.0f; i<=40.0; i=i+4.0f) {
+			//centigrade=i;
+		    centigrade = (5f/9f)*(i-32);
+			System.out.print(i+", ");
+			System.out.println(centigrade);
+			
+		}
+		System.out.println();
+		float x=0.0f;
+		while (x<40.0) {
+			x=x+4.0f;
+			System.out.print(x+", ");
+		}
+		StopChecking();
+	}
+	//1.Write a method in the Part A step 1 class ImmutableObject called StopChecking
+	public static void StopChecking() {
+		Scanner input =new Scanner (System.in); 
+
+		//2.declare an 2D array called myArray,
+		String [][]  myArray ={
+		        {"BMW", "Ferrari", "Lambo"}, //inlcude comma ","for second array
+				{"pizza", "burger", "dumpling"}
+	    };
+		/*
+		for (int i=0; i<myArray.length; i++) {
+			System.out.println();
+			for (int j=0;j<myArray[i].length;j++) {
+				System.out.println(myArray[i][j]+" ");
+		}
+		}
+		*/
+		
+		//3. Declare two String variables called isin and inputwords
+		String isin;
+		String inputwords;
+		//4.print out the sentence “Enter a word: ”
+		System.out.println("\nEnter a word");	
+		//5. Assign the keyboard input to the inputwords 
+        //inputwords=input.next();
+		//check if the inputwords equal to “STOP”, if it is “STOP”
+		for (int i=0; i<myArray.length; i++) {
+			System.out.println();
+		    for (int j=0; j<myArray[i].length; j++) {
+		    	inputwords=input.next();
+			    if (inputwords.equals("STOP")) {
+				    //then terminate the program
+				   System.out.println(0);
+				   //break; 
+				
+				}
+			    else if (inputwords.equals(myArray[i][j])){
+				    System.out.println(inputwords+" is in the 2D array");	
+				
+			    }
+			    else {
+				    System.out.println(inputwords+" is not in the 2D array");
+			    }
+			}
+		}
+    }
+}
