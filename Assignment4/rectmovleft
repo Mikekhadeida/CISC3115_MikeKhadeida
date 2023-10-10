@@ -33,7 +33,7 @@ public class HW4 {
 }
 package Homework;
 public class Rectangle {
-          int x,y, width, height;
+         int x,y, x2, y2;
           
           
          public Rectangle(int x, int y, int x2, int y2 ) {
@@ -51,7 +51,7 @@ public class Point {
 	
 	Point (int x, int y){
 		this.x=x;
-	    this.y=y;
+	        this.y=y;
 	}
 
 }
