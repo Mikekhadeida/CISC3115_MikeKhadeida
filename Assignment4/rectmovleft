@@ -24,11 +24,11 @@ public class HW4 {
 	   
 	    }
         
-
         box.x = box.x + p.x;
         box.y = box.y + p.y;
+        box.x2 = box.x2 + p.x;
+        box.y2 = box.y2 + p.y;
   
-		// TODO Auto-generated method stub
 	}
 }
 package Homework;
@@ -36,11 +36,11 @@ public class Rectangle {
           int x,y, width, height;
           
           
-         public Rectangle(int x, int y, int width, int height ) {
+         public Rectangle(int x, int y, int x2, int y2 ) {
         	  this.x =x;
         	  this.y=y;
-        	  this.width=width;
-        	  this.height=height;
+        	  this.x2 = x2;
+                  this.y2 = y2;
           }
 }
 package Homework;
