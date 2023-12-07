@@ -1,0 +1,56 @@
+package Homework;
+public class Rational extends Number implements Comparable<Rational> {
+	private long numerator;
+    private long denominator;
+	
+	public Rational () {
+		this(0,1);
+	}
+	
+	public Rational (long numerator, long denominator) {
+		this.numerator=numerator;
+		this.denominator=denominator;
+	}
+	public long getNumerator() {
+		return numerator;
+	}
+	public long getDenominator() {
+		return denominator;
+	}
+	
+	public Rational add(Rational secondRational) {
+        long newNumerator = this.numerator * secondRational.getDenominator() + this.denominator * secondRational.getNumerator();
+        long newDenominator = this.denominator * secondRational.getDenominator();
+        return new Rational(newNumerator, newDenominator);
+    }
+	 public Rational subtract(Rational secondRational) {
+	        long newNumerator = this.numerator * secondRational.getDenominator() - this.denominator * secondRational.getNumerator();
+	        long newDenominator = this.denominator * secondRational.getDenominator();
+	        return new Rational(newNumerator, newDenominator);
+	    }
+	 public Rational multiply (Rational secondRational) {
+		 long newNumerator = this.numerator*secondRational.getDenominator();
+		 long newDenominator=this.denominator*secondRational.getDenominator();
+	        return new Rational(newNumerator, newDenominator);
+
+	 }
+	 public Rational divide (Rational secondRational) {
+		  long newNumerator = this.numerator * secondRational.getDenominator();
+	        long newDenominator = this.denominator * secondRational.getNumerator();
+	        return new Rational(newNumerator, newDenominator);
+	 }
+	 public String toString( ) {
+		 if (denominator==1) {
+			 return Long.toString(numerator);
+	     } else {
+	       return numerator + "/" + denominator;
+		  } 
+	 }	 
+	 private static long gcd(long n, long d) {
+		     if (d == 0) {
+		       return n;
+		     }
+		   return gcd(d, n % d);
+     }
+		 
+}
